@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas grandes</title>
     <style>
-        body{
+        body {
             font-family: arial;
         }
-        table{
+
+        table {
             width: 500px;
             border-collapse: collapse;
         }
-        td, th{
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        td,
+        th {
             border: 1px solid black;
             padding: 10px;
         }
-        thead, tfoot{
+
+        thead,
+        tfoot {
             background-color: gray;
             color: white;
         }
-        td.num{
+
+        tbody tr:nth-child(2n) {
+            background-color: lightgray;
+        }
+
+        td.num {
             text-align: right;
         }
     </style>
 </head>
+
 <body>
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col">População</th>
             </tr>
         </thead>
         <tbody>
@@ -47,13 +67,26 @@
                 <td>Rio de Janeiro</td>
                 <td class="num">17 644 943</td>
             </tr>
+            <tr>
+                <td>São Paulo</td>
+                <td class="num">49 919 019</td>
+            </tr>
+            <tr>
+                <td>Minas Gerais</td>
+                <td class="num">21 168 791</td>
+            </tr>
+            <tr>
+                <td>Rio de Janeiro</td>
+                <td class="num">17 644 943</td>
+            </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td>Total de Habitantes</td>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num"><strong>122 445 214</strong></td>
             </tr>
         </tfoot>
     </table>
 </body>
+
 </html>
